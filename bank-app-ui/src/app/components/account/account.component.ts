@@ -20,7 +20,7 @@ export class AccountComponent implements OnInit {
     if(localStorage.getItem('userdetails') != null) {
       this.user = JSON.parse(localStorage.getItem('userdetails')!);
       if(this.user){
-        this.dashboardService.getAccountDetails(this.user.id).subscribe(
+        this.dashboardService.getAccountDetails(this.user.email).subscribe(
           responseData => {
             if(responseData)
                 this.account = <any> responseData;

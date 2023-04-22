@@ -13,7 +13,7 @@ export class DashboardService {
     
   }
 
-  getAccountDetails(id: number){
+  getAccountDetails(id: string){
     return this.http.get(environment.rooturl + AppConstants.ACCOUNT_API_URL + "/customer/"+id,{ withCredentials: true});
   }
 

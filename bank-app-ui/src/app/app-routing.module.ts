@@ -9,9 +9,9 @@ import { BalanceComponent } from '../app/components/balance/balance.component';
 import { NoticesComponent } from './components/notices/notices.component';
 import { LoansComponent } from './components/loans/loans.component';
 import { CardsComponent } from './components/cards/cards.component';
-import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 import { HomeComponent } from './components/home/home.component';
-import { IsAuthenticatedResolver } from './resolvers/is-authenticated.resolver';
+import { KeycloakAuthGuard } from 'keycloak-angular';
+import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -19,12 +19,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'notices', component: NoticesComponent},
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthActivateRouteGuard], resolve: [IsAuthenticatedResolver] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthActivateRouteGuard]},
   { path: 'logout', component: LogoutComponent},
-  { path: 'myAccount', component: AccountComponent, canActivate: [AuthActivateRouteGuard], resolve: [IsAuthenticatedResolver]},
-  { path: 'myBalance', component: BalanceComponent, canActivate: [AuthActivateRouteGuard], resolve: [IsAuthenticatedResolver]},
-  { path: 'myLoans', component: LoansComponent, canActivate: [AuthActivateRouteGuard], resolve: [IsAuthenticatedResolver]},
-  { path: 'myCards', component: CardsComponent, canActivate: [AuthActivateRouteGuard], resolve: [IsAuthenticatedResolver]},
+  { path: 'myAccount', component: AccountComponent, canActivate: [AuthActivateRouteGuard]},
+  { path: 'myBalance', component: BalanceComponent, canActivate: [AuthActivateRouteGuard]}, 
+  { path: 'myLoans', component: LoansComponent, canActivate: [AuthActivateRouteGuard]},
+  { path: 'myCards', component: CardsComponent, canActivate: [AuthActivateRouteGuard]},
   { path: '**', redirectTo : "home"}
 ];
 

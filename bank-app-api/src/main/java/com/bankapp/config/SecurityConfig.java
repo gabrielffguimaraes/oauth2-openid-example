@@ -28,6 +28,7 @@ public class SecurityConfig {
                                 "/auth/logout",
                                 "/notices",
                                 "/contact").permitAll()
+                .requestMatchers("/cards").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .oauth2ResourceServer().jwt().jwtAuthenticationConverter(jwtAuthenticationConverter);

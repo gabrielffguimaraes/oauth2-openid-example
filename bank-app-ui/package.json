@@ -24,6 +24,8 @@
     "bootstrap": "^5.2.0",
     "font-awesome": "^4.7.0",
     "jwt-decode": "^3.1.2",
+    "keycloak-angular": "^13.0.0",
+    "keycloak-js": "^21.1.0-1",
     "ngx-cookie-service": "^15.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

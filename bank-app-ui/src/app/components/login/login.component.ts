@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {User} from "src/app/model/user.model";
 import {LoginService} from 'src/app/services/login/login.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {CsrfService} from "../../services/csrf.service";
 import {CookieService} from "ngx-cookie-service";
 
 
@@ -16,7 +15,6 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService,
               private router: Router,
               private activatedRouter:ActivatedRoute,
-              private csrfService:CsrfService,
               private cookieService: CookieService
   ) {
     
